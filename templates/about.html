@@ -1,0 +1,37 @@
+{% extends 'layout.html'%}
+{% block title %}
+    About Page
+{% endblock title %}
+{% block main %}
+    <div class="container lead text-break">
+        <h1 class="h1 py-2 fw-semibold">Welcome to MoviesBox</h1>
+        <img src="../static/film_roll.jpg" alt="photo of a old movie roll" 
+            class="img-fluid align-self-center py-2">
+        <p>
+            Movies are a popular form of entertainment all around the world. They offer a way for people to escape from their 
+            daily lives and immerse themselves in different stories, characters, and worlds. There are many different genres of 
+            movies, including action, comedy, drama, horror, romance, and science fiction. Each genre appeals to different 
+            audiences and can evoke a wide range of emotions.
+        </p>
+        <p>
+            When it comes to choosing a movie to watch, there are many factors to consider. Some people prefer to watch new 
+            releases, while others enjoy revisiting classic films. It's also important to think about the rating of a movie and 
+            whether it's appropriate for the audience. For example, parents may want to avoid showing their young children movies 
+            with violence or adult themes.
+        </p>
+        <p>
+            This website is a personal project for me to learn and improve my knowledge of HTML, CSS Bootstrap, API knowledge, <br>
+            and the Flask Framework in Python in order to create a dynamic website.<br>
+        </p>            
+        <p>
+            The website is built with Python's Flask Framework, it requests information from the TMDB Movies API 
+            and displays it with HTML and Bootstrap CSS, Some of the features are as follows:
+        </p>
+            <ul>
+                <li>Search Functionality</li>
+                <li>Discover movies using various parameters such as popularity, release date, average ratings, etc.</li>
+                <li>Access to all movie information such as synopsis, cast information, blockbuster revenue, runtime, etc.</li>
+            </ul>
+        </p>
+    </div>
+{% endblock main %}

@@ -1,0 +1,10 @@
+<div class="container pt-4 d-flex justify-content-end">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Sort By
+    </button>
+    <ul class="dropdown-menu bg-light-subtle">
+        <li><a class="dropdown-item" href="{{url_for('index_html', sort_by='popularity', page=1)}}">Popularity</a></li>
+        <li><a class="dropdown-item" href="{{url_for('index_html', sort_by='primary_release_date', page=1)}}">Release Date</a></li>
+        <li><a class="dropdown-item" href="{{url_for('index_html', sort_by='vote_average', page=1)}}">Average Ratings</a></li>
+    </ul>
+</div>

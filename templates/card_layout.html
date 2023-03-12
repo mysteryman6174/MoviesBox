@@ -1,0 +1,18 @@
+<div class="row row-cols-1 row-cols-md-4 g-4 container mx-auto my-auto">
+    {% for movie in movie_list %}
+    <div class="col">
+        <div class="card h-100">
+            {% if movie['poster_path'] %}
+                <img src="{{"https://image.tmdb.org/t/p/w500/" + movie['poster_path']}}" 
+                    class="card-img-top img-fluid" alt="{{movie['original_title']}}">
+            {% endif %}
+            <div class="card-body">
+                <p class="card-text">{{movie['overview']}}</p>
+            </div>
+            <div class="card-footer text-center">
+                <a href="/{{movie['id']}}" class="nav-link text-info">{{movie['original_title']}}</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

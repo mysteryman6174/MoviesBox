@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+{% block title %}
+    {{movie['original_title']}}
+{% endblock title %}
+{% block main %}
+<div class="container">
+    <h1 class="h1 pt-2 fw-semibold">{{movie['original_title']}}</h1>
+    <div class="row">
+        <div class="col-4">
+            {% if movie['poster_path'] %}
+                <img src="{{"https://image.tmdb.org/t/p/w500/" + movie['poster_path']}}" 
+                    class="card-img-top img-fluid" alt="{{movie['original_title']}}">
+            {% endif %}
+        </div>
+        <div class="col-8">
+            <h2 class="h2 fw-light">Overview</h2>
+            <p class="lead">{{movie['overview']}}</p>
+            <div class="row">
+                <div class="col-6">
+                <h2 class="h2 fw-light">Genres</h2>
+                <ul class="lead">
+                    {% for genre in movie['genres'] %}
+                    <li>{{genre['name']}}</li>
+                    {% endfor %}
+                </ul>
+                </div>
+                <div class="col-6">
+                    <h2 class="h2 fw-light">Information</h2>
+                    <ul class="lead">
+                        <li>Release Date: {{movie['release_date']}}</li>
+                        <li>Movie Runtime: {{movie['runtime']}} mins</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <h2 class="h2 fw-light">Ratings</h2>
+                <div class="col-6">
+                   <ul><li><p class="lead">Average Vote: {{movie['vote_average']}}</p></li></ul>
+                </div>
+                <div class="col-6">
+                    <ul><li><p class="lead">Vote Count: {{movie['vote_count']}}</p></li></ul>
+                </div>
+            </div>   
+            <h2 class="h2 fw-light">Production</h2>
+            <p class="lead text-break">
+                {% for comp in movie['production_companies'] %}
+                    {{comp['name']}} - {{comp['origin_country']}}, 
+                {% endfor %}
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock main %}
