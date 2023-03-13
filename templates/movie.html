@@ -9,7 +9,7 @@
         <div class="col-4">
             {% if movie['poster_path'] %}
                 <img src="{{"https://image.tmdb.org/t/p/w500/" + movie['poster_path']}}" 
-                    class="card-img-top img-fluid" alt="{{movie['original_title']}}">
+                    class="img-fluid" alt="{{movie['original_title']}}">
             {% endif %}
         </div>
         <div class="col-8">
